@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .title-text {
+            font-family: 'Press Start 2P', cursive;
+        }
+        body {
+            font-family: 'Monoki Nerd Font', monospace; font-size: 14px;
+        }
+        .green-text {
+            color: #4ade80;
+        }
+        h1, p, button {
+            line-height: 1.5;
+            letter-spacing: 1px;
+        }
+        .bg-green-button {
+            background-color: transparent;
+            border: 1px solid #4ade80;
+            color: #4ade80;
+            padding: 5px 10px;
+            margin: 2px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .bg-green-button:hover {
+            background-color: #4ade80;
+            color: #000;
+        }
+        
+    </style>
+</head>
+<body class="bg-black text-green-400">
+    <div class="text-center py-8">
+        <h1 class="text-3xl green-text title-text mb-4">
+            <a href="/" class="hover:underline">VOID WEB</a>
+        </h1>
+        <nav class="title-text mb-8">
+            <a href="/writings"><button class="bg-green-button text-sm">Writings</button></a>
+            <a href="/shitposts"><button class="bg-green-button text-sm">Shitposts</button></a>
+            <a href="/about"><button class="bg-green-button text-sm">About</button></a>
+        </nav>
+    </div>
+    {% block content %} {% endblock %}
+</body>
+</html>
