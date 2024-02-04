@@ -29,7 +29,7 @@ def create_table():
 def get_all():
     conn = create_conn()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM writings")
+    cursor.execute("SELECT * FROM writings ORDER BY id DESC")
     data = cursor.fetchall()
     conn.close()
     return data
@@ -56,3 +56,10 @@ def get_writing(post_id):
     data = cursor.fetchone()
     conn.close()
     return data
+
+def delete_writing(post_id):
+    conn = create_conn()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM writings WHERE id=?", (post_id,))
+    conn.commit()
+    conn.close()

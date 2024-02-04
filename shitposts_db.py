@@ -28,13 +28,13 @@ def create_table():
 def get_all():
     conn = create_conn()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM shitposts")
+    cursor.execute("SELECT * FROM shitposts ORDER BY id DESC")
     data = cursor.fetchall()
     conn.close()
     return data
 
 
-def create_writing(username, content):
+def create_shitpost(username, content):
     conn = create_conn()
     cursor = conn.cursor()
     cursor.execute(
@@ -44,3 +44,11 @@ def create_writing(username, content):
 
     conn.commit()
     conn.close()
+
+def delete_shitpost(post_id):
+    conn = create_conn()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM shitposts WHERE id=?", (post_id,))
+    conn.commit()
+    conn.close()
+

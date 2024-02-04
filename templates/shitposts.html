@@ -1,19 +1,20 @@
 {% extends "layout.html" %}
 {% block title %} twitter {% endblock %}
 {% block content %}
-<div class="max-w-2xl mx-auto py-10">
-    <h1 class="text-4xl green-text title-text mb-6 text-center">Shitpost</h1>
+<div class="py-8 flex flex-col items-center">
+    <h1 class="text-3xl green-text mb-3 semititle-text">Shitposts</h1>
     <div class="text-center mb-6">
         <a href="/create-shitposts" class="inline-block bg-green-500 hover:bg-green-600 text-black font-bold py-2 px-4 rounded">
             Create Shitposts
         </a>
     </div>
     {% for post in shitpost_posts %}
-        <div class="post bg-gray-800 p-6 rounded-lg shadow-md mb-4">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-md mb-4">
             <div class="text-xl text-green-500 mb-2">
                 {{ post[3] | safe }}
-            </div><hr color="green"><br>
-            <h3 class="text-sm text-green-300 mb-4">~{{ post[1] }} on {{ post[2] }}</h5>
+            </div>
+            <hr class="border-green-500  mb-6">
+            <h3 class="text-sm text-green-300 mb-4">@{{ post[1] }} on {{ post[2] }}</h3>
         </div>
     {% endfor %}
 </div>

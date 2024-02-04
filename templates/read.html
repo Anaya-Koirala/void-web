@@ -2,14 +2,12 @@
 {% block title %} damn bro you're actually reading {% endblock %}
 {% block content %}
 <div class="py-8">
-    <h1 class="text-4xl green-text title-text mb-6 text-center">Writings</h1>
-    
+    <h1 class="text-4xl semititle-text mb-6 text-center">{{ post[1] }}</h1>
+    <div class="text-center mb-6"><i><h3 class="semititle-text">“{{ post[2] }}”</h3></i></div>
+    <h6 class="mb-6 text-center">Date: {{ post[3] }}</h6>
     <div class="max-w-4xl mx-auto px-4">
-        <div class="post bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl text-green-400 mb-2">{{ post[1] }}</h2>
-            <h3 class="text-xl text-green-300 mb-2">{{ post[2] }}</h3>
-            <p class="text-green-300 mb-4">Date: {{ post[3] }}</p>
-            <div class="content text-green-200">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+            <div class="content text-green-400">
                 {{ post[4] | safe }}
             </div>
         </div>

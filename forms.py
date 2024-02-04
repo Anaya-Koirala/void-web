@@ -15,3 +15,7 @@ class ShitpostingForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired(), Length(max=100)])
     content = TextAreaField("Content", validators=[DataRequired()])
     submit = SubmitField("Upload Shitposting")
+
+class PasswordForm(FlaskForm):
+    password = PasswordField("Password", validators=[DataRequired()])
+    submit = SubmitField("Delete")
