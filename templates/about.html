@@ -1,46 +1,35 @@
 {% extends "layout.html" %}
-{% block title %} not really about me {% endblock %}
+{% block title %}Not Really About Me{% endblock %}
 {% block content %}
-<div class="py-8 flex flex-col items-center">
-    <h1 class="text-3xl green-text mb-3 semititle-text">About</h1>
+
+
+
+<div class="windows-container" style="justify-content: center; align-items: flex-start; gap: 20px;">
+    <div class="window">
     
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Current Computer Setup -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
-            <h2 class="text-2xl text-green-400 mb-3">current setup</h2>
-            <p class="text-green-300">OS: Artix Linux w/ runit <br> DE: KDE Plasma with Latte Dock</p>
-        </div>
-
-        <!-- Recommended Music -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
-            <h2 class="text-2xl text-green-400 mb-3">fine music</h2>
-            <p class="text-green-300">TBD</p>
-        </div>
-
-        <!-- Current Readings -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
-            <h2 class="text-2xl text-green-400 mb-3">fine reads</h2>
-            <p class="text-green-300">TBD</p>
-        </div>
-
-        <!-- Recommended Readings -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
-            <h2 class="text-2xl text-green-400 mb-3">current reads</h2>
-            <p class="text-green-300">TBD</p>
-        </div>
-
-        <!-- Fun Videos -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
-            <h2 class="text-2xl text-green-400 mb-3">fine videos</h2>
-            <p class="text-green-300"></p>
+        <div class="title-bar">
+            <button aria-label="Close" class="close" onclick="closeWindow(this)"></button>
+            <h1 class="title">About Me</h1>
         </div>
         
-        <!-- Symmetry -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
-            <h2 class="text-2xl text-green-400 mb-3">random box i've added for symmetry</h2>
-            <p class="text-green-300">wise words comming soon</p>
+        <div class="separator"></div>
+        <div class="window-pane">
+            <p>
+				<u> Setup </u><br>
+				OS: Artix Linux (runit)<br>
+				DE: KDE Plasma w/ Latte<br><br>
+				<u> Contact </u><br>
+				Discord: @hegelskrit<br>
+				Mail: anayakoirala[at]proton[dot]me<br>
+				GitHub: Anaya-Koirala<br><br>
+				<u> Music Recommendation </u><br>
+				TBD<br><br>
+				<u> Books Recommendation </u><br>
+				TBD<br><br>
+				
+            </p>
         </div>
-        
     </div>
 </div>
+    
 {% endblock %}

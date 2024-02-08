@@ -4,6 +4,7 @@ import datetime
 today = datetime.datetime.now()
 today = today.strftime("%d-%b-%y")
 
+
 def create_conn():
     return sqlite3.connect("shitposts.db")
 
@@ -38,12 +39,13 @@ def create_shitpost(username, content):
     conn = create_conn()
     cursor = conn.cursor()
     cursor.execute(
-            "INSERT INTO shitposts (username, date, content) VALUES (?, ?, ?)",
-            (username, today, content),
-        )
+        "INSERT INTO shitposts (username, date, content) VALUES (?, ?, ?)",
+        (username, today, content),
+    )
 
     conn.commit()
     conn.close()
+
 
 def delete_shitpost(post_id):
     conn = create_conn()
@@ -51,4 +53,3 @@ def delete_shitpost(post_id):
     cursor.execute("DELETE FROM shitposts WHERE id=?", (post_id,))
     conn.commit()
     conn.close()
-

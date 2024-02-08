@@ -4,6 +4,7 @@ import datetime
 today = datetime.datetime.now()
 today = today.strftime("%d-%b-%y")
 
+
 def create_conn():
     return sqlite3.connect("writings.db")
 
@@ -39,8 +40,8 @@ def create_writing(title, subtitle, content):
     conn = create_conn()
     cursor = conn.cursor()
     cursor.execute(
-            "INSERT INTO writings (title,subtitle,date, content) VALUES (?, ?, ?, ?)",
-            (title, subtitle, today, content),
+        "INSERT INTO writings (title,subtitle,date, content) VALUES (?, ?, ?, ?)",
+        (title, subtitle, today, content),
     )
     conn.commit()
     conn.close()
@@ -56,6 +57,7 @@ def get_writing(post_id):
     data = cursor.fetchone()
     conn.close()
     return data
+
 
 def delete_writing(post_id):
     conn = create_conn()

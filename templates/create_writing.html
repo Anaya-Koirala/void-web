@@ -1,38 +1,39 @@
 {% extends "layout.html" %}
 {% block title %} Upload Writing {% endblock %}
 {% block content %}
-<div class="max-w-2xl mx-auto py-10">
-    <h1 class="text-4xl green-text mb-6 text-center">Upload Writing</h1>
-    
-    <form method="POST" class="bg-gray-800 p-8 rounded-lg space-y-6">
-        {{ writing_form.hidden_tag() }}
-        <div class="form-group">
-            <label class="block green-text text-lg mb-2" for="{{ writing_form.title.id }}">
-                {{ writing_form.title.label }}
-            </label>
-            {{ writing_form.title(class="form-control block w-full px-3 py-2 text-base border-2 border-green-500 rounded-md text-green-400 bg-gray-700 focus:outline-none focus:border-green-300") }}
-        </div>
-        <div class="form-group">
-            <label class="block green-text text-lg mb-2" for="{{ writing_form.subtitle.id }}">
-                {{ writing_form.subtitle.label }}
-            </label>
-            {{ writing_form.subtitle(class="form-control block w-full px-3 py-2 text-base border-2 border-green-500 rounded-md text-green-400 bg-gray-700 focus:outline-none focus:border-green-300") }}
-        </div>
-        <div class="form-group">
-            <label class="block green-text text-lg mb-2" for="{{ writing_form.content.id }}">
-                {{ writing_form.content.label }}
-            </label>
-            {{ writing_form.content(class="form-control block w-full px-3 py-2 text-base border-2 border-green-500 rounded-md text-green-400 bg-gray-700 focus:outline-none focus:border-green-300") }}
-        </div>
-        <div class="form-group">
-            <label class="block green-text text-lg mb-2" for="{{ writing_form.password.id }}">
-                {{ writing_form.password.label }}
-            </label>
-            {{ writing_form.password(class="form-control block w-full px-3 py-2 text-base border-2 border-green-500 rounded-md text-green-400 bg-gray-700 focus:outline-none focus:border-green-300") }}
-        </div>
-        <button type="submit" class="bg-green-500 hover:bg-green-600 text-black font-bold py-2 px-4 rounded">
-            Submit
-        </button>
-    </form>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="width: 50%; min-width: 300px;">
+        <div style="text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Upload Writing</div>
+        <form method="POST" style="display: flex; flex-direction: column; gap: 16px;">
+            {{ writing_form.hidden_tag() }}
+            <div>
+                <label for="{{ writing_form.title.id }}" style="font-size: 16px;">
+                    {{ writing_form.title.label }}
+                </label>
+                {{ writing_form.title(style="width: 100%; padding: 8px; font-size: 16px;") }}
+            </div>
+            <div>
+                <label for="{{ writing_form.subtitle.id }}" style="font-size: 16px;">
+                    {{ writing_form.subtitle.label }}
+                </label>
+                {{ writing_form.subtitle(style="width: 100%; padding: 8px; font-size: 16px;") }}
+            </div>
+            <div>
+                <label for="{{ writing_form.content.id }}" style="font-size: 16px;">
+                    {{ writing_form.content.label }}
+                </label>
+                {{ writing_form.content(style="width: 100%; padding: 8px; font-size: 16px; height: 150px;") }} <!-- Larger textbox for content -->
+            </div>
+            <div>
+                <label for="{{ writing_form.password.id }}" style="font-size: 16px;">
+                    {{ writing_form.password.label }}
+                </label>
+                {{ writing_form.password(style="width: 100%; padding: 8px; font-size: 16px;") }}
+            </div>
+            <button type="submit" style="padding: 8px 16px; font-size: 16px;">
+                Submit
+            </button>
+        </form>
+    </div>
 </div>
 {% endblock %}

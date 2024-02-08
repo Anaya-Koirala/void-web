@@ -1,17 +1,14 @@
 {% extends "layout.html" %}
 {% block title %} extended shitposts {% endblock %}
-
 {% block content %}
-<div class="py-8 flex flex-col items-center">
-    <h1 class="text-3xl green-text mb-3 semititle-text">Writings</h1>
-    <ul class="space-y-4 max-w-md w-full">
-        {% for post in writing_posts %}
-        <li class="bg-gray-800 p-4 rounded-lg text-center">
-            <h2 class="text-xl text-green-400">{{ post[1] }}</h2>
-            <p class="text-green-300 italic">{{ post[2] }}</p>
-            <a href="/read/{{ post[0] }}" class="text-red-500 hover:text-red-600">read</a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+<center>
+    <h1 style="font-size: 2em; margin-bottom: 0.5em;">Writings</h1>
+    {% for post in writing_posts %}
+    <div class="standard-dialog center scale-down" style="width:30rem;">
+        <h2 class="dialog-text">{{ post[1] }}</h2>
+        <p class="dialog-text">{{ post[2] }}</p>
+        <a href="/read/{{ post[0] }}" class="btn">read</a>
+    </div><br>
+    {% endfor %}
+</center>
 {% endblock %}

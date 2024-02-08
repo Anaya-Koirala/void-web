@@ -1,26 +1,28 @@
 {% extends "layout.html" %}
-{% block title %} please for the love of god be civil {% endblock %}
+{% block title %}Please, for the love of god, be civil{% endblock %}
 {% block content %}
-<div class="max-w-xl mx-auto py-10">
-    <h1 class="text-3xl green-text mb-6 text-center">Upload Shitpost</h1>
-        <h1 class="text-sm green-text mb-6 text-center">Dont do anything stupid, I havent implement a delete feature</h1><br>
-    <form method="POST" class="bg-gray-800 p-8 rounded-lg space-y-6">
-        {{ shitposting_form.hidden_tag() }}
-        <div class="form-group">
-            <label class="block green-text text-lg mb-2" for="{{ shitposting_form.username.id }}">
-                {{ shitposting_form.username.label }}
-            </label>
-            {{ shitposting_form.username(class="form-control block w-full px-3 py-2 text-base border-2 border-green-500 rounded-md text-green-400 bg-gray-700 focus:outline-none focus:border-green-300") }}
-        </div>
-        <div class="form-group">
-            <label class="block green-text text-lg mb-2" for="{{ shitposting_form.content.id }}">
-                {{ shitposting_form.content.label }}
-            </label>
-            {{ shitposting_form.content(class="form-control block w-full px-3 py-2 text-base border-2 border-green-500 rounded-md text-green-400 bg-gray-700 focus:outline-none focus:border-green-300") }}
-        </div>
-        <button type="submit" class="bg-green-500 hover:bg-green-600 text-black font-bold py-2 px-4 rounded">
-            Submit
-        </button>
-    </form>
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div style="width: 50%; min-width: 300px;">
+        <div style="text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Upload Shitpost</div>
+        <p style="text-align: center; margin-bottom: 16px;">Don't do anything stupid, I haven't implemented a delete feature</p>
+        <form method="POST" style="display: flex; flex-direction: column; gap: 16px;">
+            {{ shitposting_form.hidden_tag() }}
+            <div>
+                <label for="{{ shitposting_form.username.id }}">
+                    {{ shitposting_form.username.label }}
+                </label>
+                {{ shitposting_form.username(style="width: 100%; padding: 8px; font-size: 16px;") }}
+            </div>
+            <div>
+                <label for="{{ shitposting_form.content.id }}">
+                    {{ shitposting_form.content.label }}
+                </label>
+                {{ shitposting_form.content(style="width: 100%; padding: 8px; font-size: 16px;") }}
+            </div>
+            <button type="submit" style="padding: 8px 16px; font-size: 16px;">
+                Submit
+            </button>
+        </form>
+    </div>
 </div>
 {% endblock %}

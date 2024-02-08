@@ -1,16 +1,17 @@
 {% extends "layout.html" %}
 {% block title %} damn bro you're actually reading {% endblock %}
 {% block content %}
-<div class="py-8">
-    <h1 class="text-4xl semititle-text mb-6 text-center">{{ post[1] }}</h1>
-    <div class="text-center mb-6"><i><h3 class="semititle-text">“{{ post[2] }}”</h3></i></div>
-    <h6 class="mb-6 text-center">Date: {{ post[3] }}</h6>
-    <div class="max-w-4xl mx-auto px-4">
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
-            <div class="content text-green-400">
-                {{ post[4] | safe }}
-            </div>
-        </div>
+<div class="window">
+    <div class="title-bar">
+        <div class="title">{{ post[1] }}</div>
+    </div>
+    <div class="window-pane">
+        <h1 style="text-align: center;">{{ post[1] }}</h1>
+        <i>
+            <h3 style="text-align: center;">“{{ post[2] }}”</h3>
+        </i>
+        <h6 style="text-align: center;">Date: {{ post[3] }}</h6>
+        <p style="white-space: pre-wrap;">{{ post[4] | safe }}</p>
     </div>
 </div>
 {% endblock %}

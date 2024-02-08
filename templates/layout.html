@@ -3,56 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        .title-text {
-            font-family: 'Press Start 2P', cursive;
-        }
-        .semititle-text {
-            font-family: 'Rubik Mono One', sans-serif;
-        }
-        body, p {
-            font-family: 'Merriweather', serif;
-            font-size: 16px;
-        }
-        .green-text {
-            color: #4ade80;
-        }
-        h1, button {
-            line-height: 1.5;
-            letter-spacing: 1px;
-        }
-        .bg-green-button {
-            background-color: transparent;
-            border: 1px solid #4ade80;
-            color: #4ade80;
-            padding: 5px 10px;
-            margin: 2px;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-        .bg-green-button:hover {
-            background-color: #4ade80;
-            color: #000;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>cool website</title>
 </head>
-<body class="bg-black text-green-400">
-    <div class="text-center py-8">
-        <h1 class="text-3xl title-text mb-4">
-            <a href="/" class="hover:underline">VOID WEB</a>
-        </h1>
-        <nav class="mb-8">
-            <a href="/writings" class="semititle-text"><button class="bg-green-button title-text text-sm">Writings</button></a>
-            <a href="/shitposts" class="semititle-text"><button class="bg-green-button title-text text-sm">Shitposts</button></a>
-            <a href="/about" class="semititle-text"><button class="bg-green-button title-text text-sm">About</button></a>
-        </nav>
-    </div>
-    {% block content %} {% endblock %}
+<style>
+    p { 
+        font-family: Chicago_12;
+    }
+</style>
+
+<script>
+
+function closeWindow(button) {
+    var windowElement = button.closest('.window');
+    setTimeout(function() {
+        windowElement.style.display = 'none';
+    }, 350);
+}
+
+function closeAllWindows() {
+    var windowElements = document.querySelectorAll('.window');
+    setTimeout(function() {
+    for (var i = 0; i < windows.length; i++) {
+        windowElements[i].style.display = 'none';
+    }
+    }, 350);
+}
+
+
+function loadPage(pageName) {
+    closeAllWindows();
+    
+    var container = document.querySelector('.windows-container');
+    if (!container) {
+        console.error('Container element not found');
+        return;
+    }
+    container.innerHTML = '';
+    var iframe = document.createElement('iframe');
+    iframe.src = `/${pageName}`;
+    iframe.style.width = '100vw';
+    iframe.style.height = '100vh';
+    iframe.style.border = '0';
+    iframe.style.margin = '0';
+    container.appendChild(iframe);
+}
+
+</script>
+
+<body style="background: #c0c0c0; margin: 0; padding: 0">
+    {% block content %}{% endblock %}
 </body>
 </html>

@@ -1,29 +1,57 @@
 {% extends "layout.html" %}
-{% block title %} cool website{% endblock %}
+{% block title %}cool website{% endblock %}
+
 
 {% block content %}
-<div class="container mx-auto px-4">
-    <div class="flex justify-center items-center my-8">
-        <div class="w-1/4 mr-8">
-            <div class="overflow-auto p-4 border border-green-500">
-                <p class="text-sm">
-                    昔者莊周夢為胡蝶，栩栩然胡蝶也，自喻適志與。不知周也。<br>
-                    俄然覺，則蘧蘧然周也。不知周之夢為胡蝶與，胡蝶之夢為周與。<br>
-                    周與胡蝶，則必有分矣。此之謂物化。
-                </p>
-            </div>
-        </div>
 
-        <div class="w-1/2">
-            <img src="{{ url_for('static', filename='imgs/home.jpg') }}" alt="The Butterfly Dream painting of a man lying back with a butterfly above him, representing the philosophical concept of transformation by Zhuang Zhou.">
+<ul role="menu-bar" style="border: 1.5px solid black">
+    <li role="menu-item" tabindex="0" aria-haspopup="false">
+        <a href="/"><img src="{{ url_for('static', filename='imgs/apple.svg') }}" style="width: 14px; height: 14px;"></a>
+    </li>
+    <li role="menu-item" tabindex="1" aria-haspopup="false"><a href="javascript:void(0);" onclick="loadPage('writings')">Writings</a></li>
+    <li role="menu-item" tabindex="2" aria-haspopup="false"><a href="javascript:void(0);" onclick="loadPage('shitposts')">Shitposts</a></li>
+    <li role="menu-item" tabindex="3" aria-haspopup="false"><a href="javascript:void(0);" onclick="loadPage('about')">About</a></li>
+</ul>
+<br><br><br><br><br><br>
+
+<div class="windows-container" style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
+    <div class="window" style="flex: 1;">
+        <div class="title-bar">
+            <button aria-label="Close" class="close" onclick="closeWindow(this)"></button>
+            <h1 class="title">Zhuangzi</h1>
         </div>
-        <div class="w-1/4 ml-8">
-            <div class="overflow-auto p-4 border border-green-500">
-                <p class="text-sm">
-                    Once, Zhuang Zhou dreamed he was a butterfly, a butterfly flitting and fluttering about, happy with himself and doing as he pleased. He didn't know that he was Zhuang Zhou. Suddenly he woke up and there he was, solid and unmistakable Zhuang Zhou. But he didn't know if he was Zhuang Zhou who had dreamt he was a butterfly, or a butterfly dreaming that he was Zhuang Zhou. Between Zhuang Zhou and the butterfly there must be some distinction! This is called the Transformation of Things.
-                </p>
-            </div>
+        <div class="separator"></div>
+        <div class="window-pane">
+            <p>
+            Once, Zhuang Zhou dreamed he was a butterfly, a butterfly flitting and fluttering about, happy with himself and doing as he pleased. He didn't know that he was Zhuang Zhou. Suddenly he woke up, and there he was, solid and unmistakable as Zhuang Zhou. But he didn't know if he was Zhuang Zhou who had dreamt he was a butterfly, or a butterfly dreaming that he was Zhuang Zhou. Between Zhuang Zhou and the butterfly, there must be some distinction! This is called the Transformation of Things.
+            </p>
+        </div>
+    </div>
+    
+    <div class="window" style="flex: 2;">
+        <div class="title-bar">
+            <button aria-label="Close" class="close" onclick="closeWindow(this)"></button>
+            <h1 class="title">Transformation of Things</h1>
+        </div>
+        <div class="separator"></div>
+        <div class="window-pane">
+            <img src="{{ url_for('static', filename='imgs/home.jpg') }}" alt="The Butterfly Dream painting" style="display: block; margin: 0 auto; max-width: 100%;">
+        </div>
+    </div>
+
+    <div class="window" style="flex: 1;">
+        <div class="title-bar">
+            <button aria-label="Close" class="close" onclick="closeWindow(this)"></button>
+            <h1 class="title">莊子</h1>
+        </div>
+        <div class="separator"></div>
+        <div class="window-pane">
+            <p>
+            昔者莊周夢為胡蝶，栩栩然胡蝶也，自喻適志與。不知周也。
+            俄然覺，則蘧蘧然周也。不知周之夢為胡蝶與，胡蝶之夢為周與。周與胡蝶，則必有分矣。此之謂物化。
+            </p>
         </div>
     </div>
 </div>
+
 {% endblock %}
