@@ -16,42 +16,23 @@
 
 function closeWindow(button) {
     var windowElement = button.closest('.window');
-    setTimeout(function() {
+    function() {
         windowElement.style.display = 'none';
-    }, 350);
-}
-
-function closeAllWindows() {
-    var windowElements = document.querySelectorAll('.window');
-    setTimeout(function() {
-    for (var i = 0; i < windows.length; i++) {
-        windowElements[i].style.display = 'none';
     }
-    }, 350);
-}
-
-
-function loadPage(pageName) {
-    closeAllWindows();
-    
-    var container = document.querySelector('.windows-container');
-    if (!container) {
-        console.error('Container element not found');
-        return;
-    }
-    container.innerHTML = '';
-    var iframe = document.createElement('iframe');
-    iframe.src = `/${pageName}`;
-    iframe.style.width = '100vw';
-    iframe.style.height = '100vh';
-    iframe.style.border = '0';
-    iframe.style.margin = '0';
-    container.appendChild(iframe);
 }
 
 </script>
 
 <body style="background: #c0c0c0; margin: 0; padding: 0">
+<ul role="menu-bar" style="border: 1.5px solid black">
+    <li role="menu-item" tabindex="0" aria-haspopup="false">
+        <a href="/"><img src="{{ url_for('static', filename='imgs/apple.svg') }}" style="width: 14px; height: 14px;"></a>
+    </li>
+    <li role="menu-item" tabindex="1" aria-haspopup="false"><btn onclick="window.location.href = '/writings';">Writings</btn></li>
+    <li role="menu-item" tabindex="2" aria-haspopup="false"><btn onclick="window.location.href = '/shitposts';">Shitposts</btn></li>
+    <li role="menu-item" tabindex="3" aria-haspopup="false"><btn onclick="window.location.href = '/about';">About</btn></li>
+</ul>
+<br><br><br><br><br><br>
     {% block content %}{% endblock %}
 </body>
 </html>

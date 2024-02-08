@@ -4,16 +4,6 @@
 
 {% block content %}
 
-<ul role="menu-bar" style="border: 1.5px solid black">
-    <li role="menu-item" tabindex="0" aria-haspopup="false">
-        <a href="/"><img src="{{ url_for('static', filename='imgs/apple.svg') }}" style="width: 14px; height: 14px;"></a>
-    </li>
-    <li role="menu-item" tabindex="1" aria-haspopup="false"><a href="javascript:void(0);" onclick="loadPage('writings')">Writings</a></li>
-    <li role="menu-item" tabindex="2" aria-haspopup="false"><a href="javascript:void(0);" onclick="loadPage('shitposts')">Shitposts</a></li>
-    <li role="menu-item" tabindex="3" aria-haspopup="false"><a href="javascript:void(0);" onclick="loadPage('about')">About</a></li>
-</ul>
-<br><br><br><br><br><br>
-
 <div class="windows-container" style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
     <div class="window" style="flex: 1;">
         <div class="title-bar">
