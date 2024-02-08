@@ -2,13 +2,22 @@
 {% block title %}twitter (previously X){% endblock %}
 {% block content %}
 
-<center>
-<button class="btn" style="width:auto;"><a href="{{url_for('create_shitposts')}}">Create Shitpost</a></button><br><br>
-{% for post in shitpost_posts %}
-<div class="standard-dialog center scale-down" style="width:50em; word-wrap: break-word;">
-  <h1 class="dialog-text">{{post[3] | safe}}</h1>
-  <p class="dialog-text">By: {{post[1]}} on {{post[2]}}</p>
-</div><br>
-{% endfor %}
-</center>
+  <div class="windows-container" style="justify-content: center; align-items: flex-start;">
+      <div class="window">
+        <div class="title-bar">
+            <button aria-label="Close" class="close" onclick="closeWindow(this)"></button>
+            <h1 class="title">Cheap Twitter</h1>
+        </div><br>
+        <center>
+        <button class="btn" style="width:auto;"><a href="{{url_for('create_shitposts')}}">Create Shitpost</a></button><br><br>
+        {% for post in shitpost_posts %}
+          <div class="standard-dialog center scale-down" style="width:50em; word-wrap: break-word;">
+              <h1 class="dialog-text">{{post[3] | safe}}</h1>
+              <p class="dialog-text">By: {{post[1]}} on {{post[2]}}</p>
+          </div><br>
+        {% endfor %}
+        </center>
+      </div>
+  </div>
+
 {% endblock %}

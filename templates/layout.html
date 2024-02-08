@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-    <title>cool website</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <style>
     p { 
@@ -30,7 +30,6 @@ function closeWindow(button) {
     <li role="menu-item" tabindex="2" aria-haspopup="false"><btn onclick="window.location.href = '/shitposts';">Shitposts</btn></li>
     <li role="menu-item" tabindex="3" aria-haspopup="false"><btn onclick="window.location.href = '/about';">About</btn></li>
 </ul>
-<br><br><br><br><br><br>
     {% block content %}{% endblock %}
 </body>
 </html>

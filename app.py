@@ -101,4 +101,4 @@ def delete_shitpost(post_id):
 if __name__ == "__main__":
     writing_db.create_table()
     shitposts_db.create_table()
-    app.run(debug=True)
+    app.run(debug=False)
