@@ -5,7 +5,7 @@
 <center>
 <button class="btn" style="width:auto;"><a href="{{url_for('create_shitposts')}}">Create Shitpost</a></button><br><br>
 {% for post in shitpost_posts %}
-<div class="standard-dialog center scale-down" style="width:50em;">
+<div class="standard-dialog center scale-down" style="width:50em; word-wrap: break-word;">
   <h1 class="dialog-text">{{post[3] | safe}}</h1>
   <p class="dialog-text">By: {{post[1]}} on {{post[2]}}</p>
 </div><br>
